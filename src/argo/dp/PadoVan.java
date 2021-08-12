@@ -1,7 +1,7 @@
 package argo.dp;
 import java.util.*;
-public class PadoVan {
-	static int n;
+public class Padovan {
+    static int n;
     static int max;
     static long[] arr;
     static long[] series;
