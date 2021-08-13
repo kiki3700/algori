@@ -28,4 +28,4 @@ public class ClimbStair {
         dp[ind] = Math.max(dp[ind-3]+arr[ind-1]+arr[ind],dp[ind-2]+arr[ind]);
         climb(ind+1);
     }
-}
+}  
