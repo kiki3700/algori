@@ -1,6 +1,6 @@
 package argo.implement;
 import java.util.*;
-public class ReserveSum {
+public class ReveseSum {
     static int n;
     static int m;
     public static void main(String[] args){
