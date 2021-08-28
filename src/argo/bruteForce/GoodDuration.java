@@ -1,59 +1,43 @@
 package argo.bruteForce;
 import java.util.*;
+import java.io.*;
+
 public class GoodDuration {
-    static int[] arr;
-    static int n;
-    static int l;
-    static int f;
-    static int b;
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        arr = new int[n];
-        for(int i = 0; i < n; i++){
-            arr[i]=sc.nextInt();
-        }
-        l = sc.nextInt();
-        f= 1000000000;
-        b = 0;
-        Arrays.sort(arr);
-        int count = 0;
-        search();
-        System.out.print(search2());
-        
-        
-    }
-    static void search(){
-        int len = arr.length;
-        
-        for(int i = 0; i < len-1; i++){
-        		if(arr[i]>l) {
-        			f = Math.min(b, arr[i]);
-        	}else if(arr[i]<l) {
-        		b= Math.max(f, arr[i]);
-        	}else {
-        		break;
-        	}
-        }
-    }
-    static int search2() {
-    	int count =0;
-    	if(f!=b) {
-    		for(int i = f+1; i<b-1; i++) {
-    			for(int j= i+1; j<b; j++) {
-    				if(i<=l&&l<=j) {
-    					count++;
 
-    				}
-//    		int left = l -f-1;
-//    		int right = b-l-1;
-//    		count = left+right +(right*left);
-//    			}
-//    		
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(in.readLine());
+		int N  =stoi(st.nextToken());
+		int arr[] = new int[N];
+		st = new StringTokenizer(in.readLine());
+		for (int i = 0; i < arr.length; i++) {
+			arr[i]= stoi(st.nextToken());	
+		}
+		st = new StringTokenizer(in.readLine());
+		int M = stoi(st.nextToken());
+		Arrays.sort(arr);
+		int left=0, right=987654321;
+		boolean find=false;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i]>M) {
+				right=Math.min(right, arr[i]);
+			}else if(arr[i]<M){
+				left=Math.max(left, arr[i]);
+			}else {
+				find=true;
+				break;
+			}
+		}
+		int L = (M-left-1);
+		int R = (right-M-1);
+		int answer = L + R +(L*R);
+		if(find)
+			System.out.println(0);
+		else
+			System.out.println(answer);
+	}
 
-    	}
-}
-    	}
-		return count;
-    }
+	static int stoi(String s) {
+		return Integer.valueOf(s);
+	}
 }
