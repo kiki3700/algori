@@ -1,3 +1,5 @@
+package argo.math;
+
 import java.util.*;
 public class Samenumber {
     static long n;
