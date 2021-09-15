@@ -8,7 +8,6 @@ public class Parallelogram {
         Point a = new Point(sc.nextDouble(), sc.nextDouble());
         Point b= new Point(sc.nextDouble(), sc.nextDouble());
         Point c= new Point(sc.nextDouble(), sc.nextDouble());
-        System.out.println((a.x-b.x)*(a.x-c.y)+"+"+(a.x-c.x)*(a.y-b.y));
         if((a.x-b.x)*(a.y-c.y)==(a.x-c.x)*(a.y-b.y)) {
         	System.out.print(-1);
         	return;
