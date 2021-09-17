@@ -21,7 +21,7 @@ public class SeriesSort2 {
 		String str = br.readLine();
 		String[] token = str.split(" ");
 		for(int i = 0; i <n; i++) {
-			int num = Integer.parseInt(token[0]);
+			int num = Integer.parseInt(token[i]);
 			numArr[i]= new Num(num, i);
 		}
 		Arrays.sort(numArr, new Comparator<Num>() {
@@ -41,7 +41,7 @@ public class SeriesSort2 {
 			}
 		});
 		for(int i =0; i <n ; i++) {
-			bw.write(numArr[i].val+" "); 
+			bw.write(numArr[i].ind+" "); 
 		}
 		bw.flush();
 	}
