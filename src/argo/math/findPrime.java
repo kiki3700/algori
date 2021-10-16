@@ -16,7 +16,7 @@ public class findPrime {
         if(num == 1) return false;
         int len = (int) Math.sqrt(num);
         boolean ans = true;
-        for(int i=2; i<len ; i++){
+        for(int i=2; i<=len ; i++){
             if(num %i==0 ) return false;
         }
         return ans;
