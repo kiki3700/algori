@@ -16,7 +16,9 @@ public class GuitarString {
 		int case1 = unit *n;
 		int case2 = (n/6+1)*set;
 		int case3 = (n/6)*set + (n%6)*unit;
-		int mini = Math.min(case2, Math.min(case2, case1));
+
+		int mini = Math.min(case2, Math.min(case3, case1));
+
 		System.out.print(mini);
 	}
 }
