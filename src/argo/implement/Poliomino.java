@@ -1,4 +1,4 @@
-';lkjlkj'
+
 package argo.implement;
 import java.util.*;
 public class Poliomino {
@@ -7,25 +7,22 @@ public class Poliomino {
 		String str = sc.next();
 		LinkedList<Board> list = new LinkedList<>();
 		Board pre = new Board("", 0);
-		
-		
 		for(int i = 0; i <str.length();i++) {
 			Board bod;
 			if(!(str.charAt(i)+"").equals(pre.type)) {
 				bod = new Board(str.charAt(i)+"",1);
-				list.add(bod);
+				list.addLast(bod);
 			}else {
 				bod = list.pollLast();
 				bod.len=bod.len+1;
-				list.add(bod);
+				list.addLast(bod);
 			}
 			pre = bod;
 		}
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0 ; i<list.size();i++) {
-			Board b = list.pollFirst();
+			Board b = list.get(i);
 			int n = b.len;
-			System.out.println(n);
 			if(b.type.equals("X")) {
 				while(n>0) {
 					if(n>=4) {
