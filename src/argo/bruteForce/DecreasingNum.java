@@ -11,7 +11,7 @@ public class DecreasingNum {
 		int n = Integer.parseInt(br.readLine());
 		decrease(0,0);
 		list.sort(null);
-		if(n >1023) {
+		if(n >list.size()) {
 			System.out.print(-1);
 		}else {
 			System.out.print(list.get(n-1));
