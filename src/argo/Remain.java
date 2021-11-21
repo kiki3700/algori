@@ -7,8 +7,6 @@ public class Remain {
         int b = sc.nextInt();
         int c = sc.nextInt();
         sc.close();
-        sc =new Scanner(System.in);
-        sc.close();
         System.out.println((a+b)%c);
         System.out.println(((a%c)+(b%c))%c);
          System.out.println(a*b%c);
