@@ -36,11 +36,11 @@ public class RemoteCon {
 		min = Math.abs(target-100);
 		int len =1;
 		if(target!=0) len = (int) (Math.log10(target)+1);
-		if(numList.size()!=0) getCloseNum(target,0,0, len);
+		if(numList.size()!=0) getCloseNum(target,0, len);
 		System.out.print(min);
 	}
 	static void getCloseNum(int target,int idx,int d, int len) {
-		if(len < idx) {
+		if(len+2 < idx) {
 		
 			return;
 		}
@@ -51,6 +51,14 @@ public class RemoteCon {
 			min = Math.min(min, Math.abs(target- d)+numLen);
 			getCloseNum(target, idx+1,( d+a*(int)Math.pow(10, idx)),len);
 		}
+	}
+	static void getCloseNum(int target,int idx, int len) {
+		if(len+1 < idx) {
 		
+			return;
+		}
+		for(int a : numList) {
+			getCloseNum(target, idx+1,(a*(int)Math.pow(10, idx)),len);
+		}
 	}
 }
