@@ -36,11 +36,11 @@ public class Friends {
 						result[i]++;
 						mark[i][j] = true;
 					}
-				}
-				for(int k = 0 ; k <n ; k++) {
-					if(arr[j][k]&&!mark[i][k]&&k!=i) {
-						result[i]++;
-						mark[i][k]=true;
+					for(int k = 0 ; k <n ; k++) {
+						if(arr[j][k]&&!mark[i][k]&&k!=i) {
+							result[i]++;
+							mark[i][k]=true;
+						}
 					}
 				}
 			}
