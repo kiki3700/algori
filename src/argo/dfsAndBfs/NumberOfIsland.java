@@ -41,6 +41,7 @@ public class NumberOfIsland {
 					}
 				}
 			}
+			
 			bw.write(sum+"\n");
 		}
 		br.close();
