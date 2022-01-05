@@ -24,7 +24,7 @@ public class StudentNumber {
 			boolean flag = false;
 			for(int j = 0; j < n ; j++) {
 				String str = numArr[j].substring(len-i);
-				System.out.println(str);
+//				System.out.println(str);
 				if(set.contains(str)) {
 					flag = true;
 					break;
