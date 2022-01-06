@@ -22,7 +22,7 @@ public class PhoneFee {
 		if(y<m) System.out.println("Y "+y);
 		else if(y>m) System.out.println("M "+m);
 		else System.out.println("Y M "+ y);
-		System.out.println(m);
-		System.out.println(y);
+//		System.out.println(m);
+//		System.out.println(y);
 	}
 }
