@@ -1,4 +1,4 @@
-package argo.bruteForce;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,21 +26,22 @@ public class ComebackHome {
 				arr[i][j] =  str.charAt(j);
 			}
 		}
-		System.out.println(search(r-1,0, visit, 0));
+		System.out.println(search(r-1,0, 0));
 	}
-	static int search(int y, int x, boolean[][] vis, int T) {
+	static int search(int y, int x, int T) {
 		if(y==0&& x==c-1 && t==T) return 1;
 		int ret =0;
-		vis[y][x]=true;
+		visit[y][x]=true;
 		for(int i = 0; i < 4 ; i++) {
 			int nx =x+ dx[i];
 			int ny = y + dy[i];
 			if(nx<0||nx>=c || ny>=r || ny<0) continue;
 			if(arr[ny][nx]!='T') continue;
-			if(vis[ny][nx]) continue;
-			ret += search(ny,nx,vis,T+1);
+			if(visit[ny][nx]) continue;
+			ret += search(ny,nx,T+1);
+			System.out.println(ret);
 		}
-		vis[y][x] = false;
+		visit[y][x] = false;
 		return ret;
 	}
 }
