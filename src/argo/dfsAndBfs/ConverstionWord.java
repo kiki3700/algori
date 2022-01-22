@@ -4,7 +4,7 @@ package argo.dfsAndBfs;
 
 
 import java.util.*;
-public class converstionWord {
+public class ConverstionWord {
 	    static boolean[] visit;
 	    static int c;
 	    public int solution(String begin, String target, String[] words) {

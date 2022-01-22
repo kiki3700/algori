@@ -1,7 +1,7 @@
 package argo.dfsAndBfs;
 import java.util.*;
 
-public class countApartment {
+public class CountApartment {
 
 
 

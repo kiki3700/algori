@@ -1,6 +1,6 @@
 package argo.dfsAndBfs;
 import java.util.*;
-public class cycle {
+public class Cycle {
 
     static boolean[][] map;
     static boolean[] visit;
