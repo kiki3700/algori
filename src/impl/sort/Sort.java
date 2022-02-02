@@ -91,11 +91,5 @@ https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html
 https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html
 		 */
-		if(start<end) {
-			int mid = (start+end)/2;
-			mergeSort(start, mid);
-			mergeSort()
-		}
-		return arr;
 	}
 }
