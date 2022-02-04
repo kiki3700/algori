@@ -9,76 +9,45 @@ import java.util.StringTokenizer;
 public class Confetti {
 	static int blue=0;
 	static int white=0;
+	static int[][] arr;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		int r = (int) Math.pow(2, n);
-		int[][] arr =new int[n][n];
+		arr =new int[n][n];
 		for(int i = 0 ; i < n; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			for(int j = 0; j < n ; j++) {
 				arr[i][j]= Integer.parseInt(st.nextToken());
 			}
 		}
-		diveAndConquer(arr);
+		diveAndConquer(0, 0, n);
 		System.out.println(white);
 		System.out.println(blue);
 	}
 	
-	static int check(int[][] arr) {
-		int r = arr.length;
-		HashSet<Integer> set = new HashSet<>();
-		for(int i = 0 ; i < r; i++) {
-			for(int j = 0 ; j<r;j++) {
-				int tmp = arr[i][j];
-				if(set.isEmpty()) set.add(tmp);
-				else if(!set.contains(tmp)) {
-
-					return -1;
+	static boolean check(int x, int y, int size) {
+		int val = arr[x][y];
+		for(int i = x ; i < x+size; i++) {
+			for(int j = y ; j<y+size;j++) {
+				if(val != arr[i][j]) {
+					return false;
 				}
 			}
 		}
-		if(set.contains(1)) return 1;
-		else return 0;
+		return true;
 	}
-	static void diveAndConquer(int[][] arr) {
-		int mid = arr.length/2;
-		int r = arr.length;
-		int result = check(arr);
-		if(result!=-1) {
-			if(result==1) blue++;
+	static void diveAndConquer(int x, int y, int size) {
+		int mid = size/2;
+
+		if(check(x,y,size)) {
+			if(arr[x][y]==1) blue++;
 			else white++;
 			return;
 		}
-		int[][] a1 = new int[mid][mid];
-		int[][] a2= new int[mid][mid];
-		int[][] a3= new int[mid][mid];
-		int[][] a4 = new int[mid][mid];
-
-		for(int i = 0 ; i < mid; i++) {
-			for(int j = 0; j<mid; j++) {
-				
-				a1[i][j] = arr[i][j];
-			}
-		}
-		for(int i = 0 ; i < mid; i++) {
-			for(int j = 0; j<mid; j++) {
-				a2[i][j] = arr[i][j+mid];
-			}
-		}
-		for(int i = 0 ; i < mid; i++) {
-			for(int j = 0; j<mid; j++) {
-				a3[i][j] = arr[i+mid][j];
-			}
-		}
-		for(int i = 0 ; i < mid; i++) {
-			for(int j = 0; j<mid; j++) {
-				a4[i][j] = arr[i+mid][j+mid];
-			}
-		}
-		diveAndConquer(a1);
-		diveAndConquer(a2);
-		diveAndConquer(a3);
-		diveAndConquer(a4);
+		diveAndConquer(x,y,mid);
+		diveAndConquer(x,y+mid,mid);
+		diveAndConquer(x+mid,y,mid);
+		diveAndConquer(x+mid,y+mid,mid);
 	}
 }
