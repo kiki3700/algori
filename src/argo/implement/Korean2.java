@@ -8,6 +8,6 @@ public class Korean2 {
 		String a = sc.next();
 		
 		char result = a.charAt(0);
-		System.out.println(((int) result)-44031);
+		System.out.println(a.codePointAt(0)-44031);
 	}
 }
