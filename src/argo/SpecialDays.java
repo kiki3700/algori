@@ -7,9 +7,9 @@ public class SpecialDays {
 		Scanner sc = new Scanner(System.in);
 		int month = sc.nextInt();
 		int day = sc.nextInt();
-		if(month>2) {
+		if(month<2) {
 			System.out.println("Before");
-		}else if(month<2){
+		}else if(month>2){
 			System.out.println("After");
 		}else {
 			if(day>18) {
